@@ -4,13 +4,19 @@ const cors = require('cors');
 const app = express();
 const port = 5000;
 
+const UserRoutes = require('./routers/UserRoutes');
+
+app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
 app.use(cors({
   credentials: true, origin: 'http://localhost:3000',
 }));
 
 app.use(express.static('public'));
-
-const UserRoutes = require('./routers/UserRoutes');
 
 app.use('/users', UserRoutes);
 

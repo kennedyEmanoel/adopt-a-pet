@@ -11,37 +11,37 @@ module.exports = class UserController {
 
     if (!name) {
       res.status(422).json({
-        message: 'O nome é obrigatório',
+        error: 'O nome é obrigatório',
       });
     }
 
     if (!email) {
       res.status(422).json({
-        message: 'O email é obrigatório',
+        error: 'O email é obrigatório',
       });
     }
 
     if (!phone) {
       res.status(422).json({
-        message: 'O telefone é obrigatório',
+        error: 'O telefone é obrigatório',
       });
     }
 
     if (!password) {
       res.status(422).json({
-        message: 'A senha é obrigatório',
+        error: 'A senha é obrigatório',
       });
     }
 
     if (!confirmPassword) {
       res.status(422).json({
-        message: 'A confirmação de senha é obrigatório',
+        error: 'A confirmação de senha é obrigatório',
       });
     }
 
     if (password !== confirmPassword) {
       res.status(422).json({
-        message: 'A senha e a confirmação de senha precisam ser iguais!',
+        error: 'A senha e a confirmação de senha precisam ser iguais!',
       });
     }
 
@@ -49,7 +49,7 @@ module.exports = class UserController {
 
     if (userExists) {
       res.status(422).json({
-        message: 'Por favor, utilize outro e-mail!',
+        error: 'Por favor, utilize outro e-mail!',
       });
     }
 
